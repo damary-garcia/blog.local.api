@@ -1,5 +1,6 @@
 import express, { Request, Response } from "express";
 import { readJSON, writeJSON } from "./db";
+import * as os from "os";
 
 const app = express();
 app.use(express.json());
@@ -78,6 +79,9 @@ app.delete("/articulos/:id", (req, res) => {
   res.status(204).send();
 });
 
+app.get("/health"), (req, res)=> {
+  
+}
 // ---------- Arranque ----------
 const PORT = Number(process.env.PORT) || 9000;
 app.listen(PORT, () => {
